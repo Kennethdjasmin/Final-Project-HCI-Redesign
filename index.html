@@ -18,9 +18,7 @@
         <button class="icon-btn" data-section="home" title="Home">
           <i data-feather="home"></i>
         </button>
-        <button class="icon-btn" data-section="events" title="Events">
-          <i data-feather="calendar"></i>
-        </button>
+        <!-- Removed Events tab as requested -->
         <button class="icon-btn" data-section="statistics" title="Statistics">
           <i data-feather="bar-chart-2"></i>
         </button>
@@ -31,8 +29,6 @@
           <i data-feather="log-in"></i>
         </button>
       </nav>
-
-
 
   <!-- Socials -->
       <div class="left-nav__spacer"></div>
@@ -48,8 +44,6 @@
       </div>
     </aside>
 
-
-
   <!--   Title -->
     <div class="page">
       <header class="hero">
@@ -62,46 +56,11 @@
         </div>
       </header>
 
-
-
   <!--     Home Page Content -->
       <main class="container">
         <div class="content-grid">
-          <aside class="categories-panel panel" id="home-panel" data-panel="home">
-          <h2>Suggestions</h2>
-          <ul class="categories-list">
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Tournaments</strong> — Sign up for a tourney</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Guides</strong> — Best builds for each faction</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Community</strong> — Join a clan</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Theorycrafting</strong> — Best of the community</span>
-              </a>
-            </li>
-          </ul>
-        </aside>
-
-
-
-
-  <!--         Panels in Events -->
-          <section class="mega-panel panel" data-panel="events">
+          <!-- Moved Events panel into Home and placed it FIRST so it's on the LEFT -->
+          <section class="mega-panel panel" data-panel="home">
             <h2>Upcoming Events</h2>
             <div class="events-row-scroll">
               <article class="event-card panel">
@@ -109,7 +68,7 @@
                   <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_01.jpg">
                 </div>
                 <div class="event-card__body">
-                  <div > ~ Single Faction Swiss Tournament ~ Top 4</div>
+                  <div> ~ Single Faction Swiss Tournament ~ Top 4</div>
                   <h3>Sign Up</h3>
                   <p class="muted">Domination Swiss Tournament using an experimental quicker 3x3 matrix system.</p>
                   <div class="meta">
@@ -162,28 +121,144 @@
             </div>
           </section>
 
+          
+          
+          
+            <div class="right-column">
+              <aside class="categories-panel panel" data-panel="home">
+                <h2>Suggestions</h2>
+                <ul class="categories-list">
+                  <li>
+                    <a href="#">
+                      <i data-feather="calendar"></i>
+                      <span><strong>Tournaments</strong> — Sign up for a tourney</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-feather="calendar"></i>
+                      <span><strong>Guides</strong> — Best builds for each faction</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-feather="calendar"></i>
+                      <span><strong>Community</strong> — Join a clan</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-feather="calendar"></i>
+                      <span><strong>Theorycrafting</strong> — Our best minds at work</span>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
 
+              <aside class="ranking-panel panel" data-panel="home">
+                <h2>Rankings</h2>
+                <div class="ranking-table">
+                  <div class="ranking-row ranking-header">
+                    <span>Rank</span>
+                    <span>Player</span>
+                    <span>Wins</span>
+                    <span>Win (%)</span>
+                  </div>
+                  <div class="ranking-row">
+                    <span>#1</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_01.png" class="avatar">
+                        RTK | Czarix
+                      </div>
+                    </span>
+                    <span>19</span>
+                    <span>78.7%</span>
+                  </div>
 
-  <!--         Temporary Tabs -->
-          <section class="generic-panel panel" data-panel="statistics">
+                  <div class="ranking-row">
+                    <span>#2</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_02.png" class="avatar">
+                        ODM | Enticity
+                      </div>
+                    </span>
+                    <span>18</span>
+                    <span>69.9%</span>
+                  </div>
+                  
+                  <div class="ranking-row">
+                    <span>#3</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_03.png" class="avatar">
+                        danican
+                      </div>
+                    </span>
+                    <span>17</span>
+                    <span>71.1%</span>
+                  </div>
+
+                  <div class="ranking-row">
+                    <span>#4</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_04.png" class="avatar">
+                        OwnGoal
+                      </div>
+                    </span>
+                    <span>10</span>
+                    <span>76.8%</span>
+                  </div>
+                  
+                  <div class="ranking-row">
+                    <span>#5</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_05.png" class="avatar">
+                        VM_BERRSERK
+                      </div>
+                    </span>
+                    <span>9</span>
+                    <span>75.6%</span>
+                  </div>
+
+                  <div class="ranking-row">
+                    <span>#6</span>
+                    <span>
+                      <div class="player-entry">
+                        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/profile_06.png" class="avatar">
+                        scrambledeggs
+                      </div>
+                    </span>
+                    <span>9</span>
+                    <span>73.9%</span>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          
+          
+
+          <!-- Other panels remain unchanged -->
+          <section class="generic-panel panel" data-panel="statistics" hidden>
             <h2>Statistics</h2>
             <p class="muted">Faction Stats and Leaderboard will be shown here.</p>
           </section>
 
-          <section class="generic-panel panel" data-panel="community">
+          <section class="generic-panel panel" data-panel="community" hidden>
             <h2>Community</h2>
             <p class="muted">Join discussions, teams, and local events.</p>
           </section>
 
-          <section class="generic-panel panel" data-panel="login">
+          <section class="generic-panel panel" data-panel="login" hidden>
             <h2>Log in</h2>
             <p class="muted">Sign in to your account.</p>
           </section>
         </div>
       </main>
     </div>
-
-
 
     <div class="right-banner">
       <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/banner.png" class="right-banner__img">
