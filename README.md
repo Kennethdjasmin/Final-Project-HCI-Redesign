@@ -7,7 +7,7 @@ Live link here:
 
 ## Preview
 **Before**
-![Screenshot of my portfolio](asset/Screenshot_01.png)
+![](asset/Screenshot_01.png)
 
 **After**
-![Screenshot of my portfolio](asset/Screenshot_02.png)
+![](asset/Screenshot_02.png)
