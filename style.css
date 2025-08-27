@@ -187,8 +187,6 @@ body {
 }
 
 .panel {
-  position: relative;
-  overflow: visible;
   border-radius: var(--radius);
   background: var(--panel);
   border: 1px solid var(--accent);
@@ -291,11 +289,11 @@ body {
   border-radius: 14px;
   padding: 14px;
   align-items: flex-start;
-  background: linear-gradient(180deg, rgba(59,13,13,0.95), rgba(42,10,10,0.95));
   transition: transform var(--transition);
   color: var(--icon-gray);
-  border: 1px solid rgba(230,184,76,0.2);
+  border: 1px solid #a77c2a;
   transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  box-shadow: 0 0 0;
 }
 
 .event-card h3,
@@ -307,6 +305,7 @@ body {
 
 .event-card:hover {
   transform: translateY(-8px);
+  border: 1px solid var(--accent);
   box-shadow: 0 12px 28px rgba(230,184,76,0.4);
   color: var(--accent);
 }
