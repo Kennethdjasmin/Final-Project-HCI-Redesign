@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TT Recreation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+  
+  
+<body>
+  
+  
+  
+<!--   Navbar -->
+  <aside class="left-nav">
+    <div class="left-nav__top">
+      <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/logo.png" class="left-nav__logo">
+    </div>
+
+    <nav class="icon-nav">
+      <button class="icon-btn" data-section="home" title="Home">
+        <i data-feather="home"></i>
+      </button>
+      <button class="icon-btn" data-section="events" title="Events">
+        <i data-feather="calendar"></i>
+      </button>
+      <button class="icon-btn" data-section="statistics" title="Statistics">
+        <i data-feather="bar-chart-2"></i>
+      </button>
+      <button class="icon-btn" data-section="community" title="Community">
+        <i data-feather="users"></i>
+      </button>
+      <button class="icon-btn" data-section="login" title="Log in">
+        <i data-feather="log-in"></i>
+      </button>
+    </nav>
+
+    
+
+<!-- Socials -->
+    <div class="left-nav__spacer"></div>
+    <div class="left-nav__socials">
+      <a href="#" class="social-square">
+        <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="22" height="14" rx="3" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M9 4v8l6-4-6-4z" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="#" class="social-square"><i data-feather="twitter"></i></a>
+      <a href="#" class="social-square"><i data-feather="message-circle"></i></a>
+    </div>
+  </aside>
+
+
+  
+<!--   Title -->
+  <div class="page">
+    <header class="hero">
+      <div class="hero__inner">
+        <h1 class="hero__title">Total Tavern</h1>
+        <p class="hero__subtitle">
+          Tourney, Guides, Stats, Community we have it all!<br />
+          The chalice of fire has been poured, let the slaugther begin! 🔥🔥🔥
+        </p>
+      </div>
+    </header>
+
+    
+    
+<!--     Home Page Content -->
+    <main class="container">
+      <div class="content-grid">
+        <aside class="categories-panel panel" id="home-panel" data-panel="home">
+        <h2>Suggestions</h2>
+        <ul class="categories-list">
+          <li>
+            <a href="#">
+              <i data-feather="calendar"></i>
+              <span><strong>Tournaments</strong> — Sign up for a tourney</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-feather="calendar"></i>
+              <span><strong>Guides</strong> — Best builds for each faction</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-feather="calendar"></i>
+              <span><strong>Community</strong> — Join a clan</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i data-feather="calendar"></i>
+              <span><strong>Theorycrafting</strong> — Best of the community</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+        
+        
+        
+<!--         Panels in Events -->
+        <section class="mega-panel panel" data-panel="events">
+          <h2>Upcoming Events</h2>
+          <div class="events-row-scroll">
+            <article class="event-card panel">
+              <div class="event-card__img">
+                <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_01.jpg">
+              </div>
+              <div class="event-card__body">
+                <div > ~ Single Faction Swiss Tournament ~ Top 4</div>
+                <h3>Sign Up</h3>
+                <p class="muted">Domination Swiss Tournament using an experimental quicker 3x3 matrix system.</p>
+                <div class="meta">
+                  <div class="badge"><i data-feather="calendar"></i> August 26, 2025 | 8:54 AM</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card panel">
+              <div class="event-card__img">
+                <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_02.jpg">
+              </div>
+              <div class="event-card__body">
+                <div> Nerd War Room NEW PLAYER Dom SFT</div>
+                <h3>Sign Up</h3>
+                <p class="muted">Newer players only! Tournament win won't count</p>
+                <div class="meta">
+                  <div class="badge"><i data-feather="calendar"></i> August 28, 2025 | 12:00 AM</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card panel">
+              <div class="event-card__img">
+                <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_03.jpg">
+              </div>
+              <div class="event-card__body">
+                <div> New Player Domination Swiss SFT AUG 30</div>
+                <h3>Sign Up</h3>
+                <p class="muted">3 wins and 1 lost game format</p>
+                <div class="meta">
+                  <div class="badge"><i data-feather="calendar"></i> August 30, 2025 | 11:00 PM</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="event-card panel">
+              <div class="event-card__img">
+                <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_04.jpg">
+              </div>
+              <div class="event-card__body">
+                <div> The Arena of Desperate Doom</div>
+                <h3>Sign Up</h3>
+                <p class="muted">Will you defeat EVERY challenger that aims to spoil all that You've worked for? …</p>
+                <div class="meta">
+                  <div class="badge"><i data-feather="calendar"></i> August 31, 2025 | 10:00 PM</div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        
+        
+        
+        <section class="generic-panel panel" id="statistics-panel" data-panel="statistics" hidden>
+          <h2>Statistics</h2>
+          <p class="muted">Faction Stats and Leaderboard will be shown here.</p>
+        </section>
+
+        <section class="generic-panel panel" id="community-panel" data-panel="community" hidden>
+          <h2>Community</h2>
+          <p class="muted">Join discussions, teams, and local events.</p>
+        </section>
+
+        <section class="generic-panel panel" id="login-panel" data-panel="login" hidden>
+          <h2>Log in</h2>
+          <p class="muted">Sign in to your account.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Right-side banner -->
+  <div class="right-banner" aria-hidden="true">
+    <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/banner.png" class="right-banner__img" alt="banner">
+    <div class="right-banner__particles" aria-hidden="true"></div>
+  </div>
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="script.js"></script>
+</body>
+</html>
