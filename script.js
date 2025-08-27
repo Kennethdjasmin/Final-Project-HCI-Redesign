@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
   feather.replace();
 
   const iconBtns = Array.from(document.querySelectorAll(".icon-btn"));
@@ -94,4 +94,3 @@ document.addEventListener("DOMContentLoaded", () => {
       eventCards.forEach(c => c.classList.remove("dimmed"));
     });
   });
-});
