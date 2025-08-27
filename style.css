@@ -125,6 +125,7 @@ body {
   flex-direction:column;
   gap:10px;
   align-items:center;
+  margin-top: 75px;
 }
 
 .social-square {
@@ -180,7 +181,7 @@ body {
 
 .content-grid {
   display:grid;
-  grid-template-columns: minmax(340px, 380px) 1fr;
+  grid-template-columns: 1fr minmax(340px, 380px);
   gap:28px;
   align-items:start;
 }
@@ -194,6 +195,12 @@ body {
   padding: 18px;
   box-shadow: 0 10px 24px rgba(230,184,76,0.2);
   color: #e6b84c;
+}
+
+.generic-panel {
+  grid-column: 1 / -1;
+  justify-content: center;
+  text-align: center;
 }
 
 .categories-panel {
@@ -250,7 +257,6 @@ body {
 .mega-panel {
   max-height: 100%;
   overflow-y: auto;
-  grid-column: span 2;
 }
 
 .mega-panel h2 {
@@ -345,6 +351,90 @@ body {
   filter: grayscale(100%) blur(2px);
   transition: filter 0.25s ease;
 }
+
+.ranking-panel {
+  width: 100%;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 24px rgba(230,184,76,0.25);
+  margin-top: 28px;
+}
+
+.ranking-panel h2 {
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ranking-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: 180px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.ranking-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px 60px;
+  align-items: center;
+  font-size: 15px;
+  color: var(--icon-gray);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(230,184,76,0.15);
+  transition: transform var(--transition), filter var(--transition), color var(--transition);
+}
+
+.ranking-row:last-child {
+  border-bottom: none;
+}
+
+.ranking-header {
+  font-weight: bold;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.ranking-row > span:nth-child(1),
+.ranking-row > span:nth-child(3),
+.ranking-row > span:nth-child(4) {
+  text-align: center;
+  justify-self: center;
+}
+
+.player-entry {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  color: var(--icon-gray);
+  cursor: pointer;
+  transition: transform var(--transition), color var(--transition), filter var(--transition);
+  padding-bottom: 2px;
+}
+
+.player-entry img.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: inherit;
+}
+
+.player-entry:hover,
+.player-entry:focus {
+  transform: translateY(-6px);
+  color: var(--accent);
+  filter: drop-shadow(0 0 10px rgba(230,184,76,0.6));
+}
+
+
 
 .right-banner{
   position: fixed;
