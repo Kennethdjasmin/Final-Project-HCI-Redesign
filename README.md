@@ -1,4 +1,4 @@
-# Final-Project-HCI-Redesign
+# Home-Page-Redesign
 A simple redesign of [Total Tavern](https://totaltavern.com/) website according to HCI heuristics with functioning HTML, CSS, JS.
 
 ## Live Demo
