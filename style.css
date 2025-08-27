@@ -304,7 +304,7 @@ body {
 }
 
 .event-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border: 1px solid var(--accent);
   box-shadow: 0 12px 28px rgba(230,184,76,0.4);
   color: var(--accent);
@@ -428,7 +428,7 @@ body {
 
 .player-entry:hover,
 .player-entry:focus {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   color: var(--accent);
   filter: drop-shadow(0 0 10px rgba(230,184,76,0.6));
 }
