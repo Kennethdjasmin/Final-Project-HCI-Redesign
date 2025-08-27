@@ -1,196 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My Portfolio</title>
-  </head>
-  
-  <body>
-  <!--   Navbar -->
-    <aside class="left-nav">
-      <div class="left-nav__top">
-        <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/logo.png" class="left-nav__logo">
-      </div>
 
-      <nav class="icon-nav">
-        <button class="icon-btn" data-section="home" title="Home">
-          <i data-feather="home"></i>
-        </button>
-        <button class="icon-btn" data-section="events" title="Events">
-          <i data-feather="calendar"></i>
-        </button>
-        <button class="icon-btn" data-section="statistics" title="Statistics">
-          <i data-feather="bar-chart-2"></i>
-        </button>
-        <button class="icon-btn" data-section="community" title="Community">
-          <i data-feather="users"></i>
-        </button>
-        <button class="icon-btn" data-section="login" title="Log in">
-          <i data-feather="log-in"></i>
-        </button>
-      </nav>
+  feather.replace();
 
+  const iconBtns = Array.from(document.querySelectorAll(".icon-btn"));
+  const panels = Array.from(document.querySelectorAll("[data-panel]"));
 
+  function setActive(section) {
+    iconBtns.forEach(btn => {
+      const s = btn.dataset.section;
+      btn.classList.toggle("active", s === section);
+      btn.setAttribute('aria-pressed', s === section ? 'true' : 'false');
+    });
 
-  <!-- Socials -->
-      <div class="left-nav__spacer"></div>
-      <div class="left-nav__socials">
-        <a href="#" class="social-square">
-          <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="22" height="14" rx="3" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M9 4v8l6-4-6-4z" fill="currentColor"/>
-          </svg>
-        </a>
-        <a href="#" class="social-square"><i data-feather="twitter"></i></a>
-        <a href="#" class="social-square"><i data-feather="message-circle"></i></a>
-      </div>
-    </aside>
+    panels.forEach(p => {
+      const name = p.dataset.panel;
+      p.hidden = (name !== section);
+    });
+  }
 
+  setActive("home");
 
+  iconBtns.forEach(btn => {
+    btn.addEventListener("click", () => setActive(btn.dataset.section));
+    btn.addEventListener("keyup", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") btn.click();
+    });
+    btn.setAttribute("tabindex", "0");
+  });
 
-  <!--   Title -->
-    <div class="page">
-      <header class="hero">
-        <div class="hero__inner">
-          <h1 class="hero__title">Total Tavern</h1>
-          <p class="hero__subtitle">
-            Tourney, Guides, Stats, Community we have it all!<br />
-            The chalice of fire has been poured, let the slaugther begin! 🔥🔥🔥
-          </p>
-        </div>
-      </header>
+  const leftNav = document.querySelector(".left-nav");
+  const rightBanner = document.querySelector(".right-banner");
+  const bannerImg = rightBanner ? rightBanner.querySelector(".right-banner__img") : null;
+  const particlesHost = rightBanner ? rightBanner.querySelector(".right-banner__particles") : null;
 
+  function syncBannerHeight() {
+    if (!leftNav || !rightBanner) return;
+    const h = leftNav.offsetHeight;
+    document.documentElement.style.setProperty('--leftnav-h', h + 'px');
+    rightBanner.style.height = h + 'px';
 
+    if (bannerImg) {
+      bannerImg.style.height = '100%';
+      bannerImg.style.width = 'auto';
+      bannerImg.style.maxHeight = h + 'px';
+    }
 
-  <!--     Home Page Content -->
-      <main class="container">
-        <div class="content-grid">
-          <aside class="categories-panel panel" id="home-panel" data-panel="home">
-          <h2>Suggestions</h2>
-          <ul class="categories-list">
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Tournaments</strong> — Sign up for a tourney</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Guides</strong> — Best builds for each faction</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Community</strong> — Join a clan</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i data-feather="calendar"></i>
-                <span><strong>Theorycrafting</strong> — Best of the community</span>
-              </a>
-            </li>
-          </ul>
-        </aside>
+    const bannerWidth = rightBanner.offsetWidth || 220;
+    document.documentElement.style.setProperty('--right-banner-w', bannerWidth + 'px');
+  }
 
+  syncBannerHeight();
+  window.addEventListener("resize", syncBannerHeight);
 
+  if (particlesHost && rightBanner) {
+    const spawnInterval = 120;
 
+    function spawnParticle() {
+      const rect = rightBanner.getBoundingClientRect();
+      const particle = document.createElement("div");
+      particle.className = "particle-square";
 
-  <!--         Panels in Events -->
-          <section class="mega-panel panel" data-panel="events">
-            <h2>Upcoming Events</h2>
-            <div class="events-row-scroll">
-              <article class="event-card panel">
-                <div class="event-card__img">
-                  <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_01.jpg">
-                </div>
-                <div class="event-card__body">
-                  <div > ~ Single Faction Swiss Tournament ~ Top 4</div>
-                  <h3>Sign Up</h3>
-                  <p class="muted">Domination Swiss Tournament using an experimental quicker 3x3 matrix system.</p>
-                  <div class="meta">
-                    <div class="badge"><i data-feather="calendar"></i> August 26, 2025 | 8:54 AM</div>
-                  </div>
-                </div>
-              </article>
+      const leftPx = Math.random() * rect.width;
+      particle.style.left = Math.round(leftPx) + "px";
 
-              <article class="event-card panel">
-                <div class="event-card__img">
-                  <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_02.jpg">
-                </div>
-                <div class="event-card__body">
-                  <div> Nerd War Room NEW PLAYER Dom SFT</div>
-                  <h3>Sign Up</h3>
-                  <p class="muted">Newer players only! Tournament win won't count</p>
-                  <div class="meta">
-                    <div class="badge"><i data-feather="calendar"></i> August 28, 2025 | 12:00 AM</div>
-                  </div>
-                </div>
-              </article>
+      const size = 4 + Math.round(Math.random() * 10);
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.borderRadius = '0px';
 
-              <article class="event-card panel">
-                <div class="event-card__img">
-                  <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_03.jpg">
-                </div>
-                <div class="event-card__body">
-                  <div> New Player Domination Swiss SFT AUG 30</div>
-                  <h3>Sign Up</h3>
-                  <p class="muted">3 wins and 1 lost game format</p>
-                  <div class="meta">
-                    <div class="badge"><i data-feather="calendar"></i> August 30, 2025 | 11:00 PM</div>
-                  </div>
-                </div>
-              </article>
+      const dur = 2200 + Math.round(Math.random() * 2200);
+      particle.style.animation = `particleRise ${dur}ms linear forwards`;
 
-              <article class="event-card panel">
-                <div class="event-card__img">
-                  <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/Container_04.jpg">
-                </div>
-                <div class="event-card__body">
-                  <div> The Arena of Desperate Doom</div>
-                  <h3>Sign Up</h3>
-                  <p class="muted">Will you defeat EVERY challenger that aims to spoil all that You've worked for? …</p>
-                  <div class="meta">
-                    <div class="badge"><i data-feather="calendar"></i> August 31, 2025 | 10:00 PM</div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </section>
+      particle.style.bottom = (2 + Math.random() * 8) + 'px';
 
+      particlesHost.appendChild(particle);
+      setTimeout(() => { particle.remove(); }, dur + 50);
+    }
 
+    const particleTimer = setInterval(spawnParticle, spawnInterval);
+    window.addEventListener('beforeunload', () => clearInterval(particleTimer));
+  }
 
-  <!--         Temporary Tabs -->
-          <section class="generic-panel panel" data-panel="statistics">
-            <h2>Statistics</h2>
-            <p class="muted">Faction Stats and Leaderboard will be shown here.</p>
-          </section>
+  const eventCards = document.querySelectorAll(".event-card");
 
-          <section class="generic-panel panel" data-panel="community">
-            <h2>Community</h2>
-            <p class="muted">Join discussions, teams, and local events.</p>
-          </section>
-
-          <section class="generic-panel panel" data-panel="login">
-            <h2>Log in</h2>
-            <p class="muted">Sign in to your account.</p>
-          </section>
-        </div>
-      </main>
-    </div>
-
-
-
-    <div class="right-banner">
-      <img src="https://raw.githubusercontent.com/Kennethdjasmin/Final-Project-HCI-Redesign/refs/heads/main/asset/banner.png" class="right-banner__img">
-      <div class="right-banner__particles"></div>
-    </div>
-
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
+  eventCards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      eventCards.forEach(c => {
+        if (c !== card) {
+          c.classList.add("dimmed");
+        }
+      });
+    });
+    card.addEventListener("mouseleave", () => {
+      eventCards.forEach(c => c.classList.remove("dimmed"));
+    });
+  });
