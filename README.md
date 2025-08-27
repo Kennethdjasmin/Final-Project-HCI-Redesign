@@ -3,7 +3,7 @@ A simple redesign of [Total Tavern](https://totaltavern.com/) website according 
 
 ## Live Demo
 Live link here:
-[GitHub Page Demo](https://kennethdjasmin.github.io/Final-Project-HCI-Redesign/index.html#)
+[GitHub Page Demo](https://kennethdjasmin.github.io/Final-Project-HCI-Redesign/index.html)
 
 ## Preview
 **Before**
